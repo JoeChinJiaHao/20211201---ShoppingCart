@@ -42,12 +42,16 @@ public class UseCart {
                 //delete item here
                 if(cart.CartSize()==0){//cart is empty
                     System.out.println("Your cart is empty!");
+                }else if(In.CheckH().contains(".")) {
+                    System.out.println("Please enter an integer index.");
                 }else if(Integer.valueOf(In.CheckH())>cart.CartSize()){
                     System.out.println("Incorrect item index");
-
-                }else {//number is outside range of cart
+                }else if(Integer.valueOf(In.CheckH())<=0){
+                    System.out.println("Incorrect item index");
+                }else {//number is 
                     System.out.println(cart.GetItem(Integer.valueOf(In.CheckH()))+ " removed from cart");
                     cart.DeleteItem(cart.GetItem(Integer.valueOf(In.CheckH())));
+                    
                 }
             }else{
                 System.out.printf("%s function not available \n",reply);
