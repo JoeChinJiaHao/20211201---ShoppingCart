@@ -22,8 +22,11 @@ public class Cart implements Startable {
     private List<String> list = new ArrayList<String>();
     
     public void AddItem(String s){
+        if(!s.equals(null)){
+        //System.out.println(s);
         map.put(s, 1);
         list.add(s);
+        }
     }
     public boolean InCart(String s){
         return map.containsKey(s);
@@ -58,7 +61,15 @@ public class Cart implements Startable {
 
     }
 
-
+    public void ClearCart(){
+        //map = new HashMap<String, Integer>();
+        //list = new ArrayList<String>();
+        map.clear();
+        list=new ArrayList<String>();
+    }
+    public List<String> GetCartList(){
+        return list;
+    }
 
 
     
